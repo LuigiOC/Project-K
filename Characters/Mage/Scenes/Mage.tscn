@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://byk7bn80p54cq"]
+
+[ext_resource type="Script" path="res://Characters/Mage/Scripts/mage.gd" id="1_wobpj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sb68"]
+size = Vector2(1119.5, 10)
+
+[sub_resource type="Gradient" id="Gradient_hn3ad"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1t1tn"]
+gradient = SubResource("Gradient_hn3ad")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mf5m5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsmy5"]
+size = Vector2(64, 66)
+
+[node name="Mage" type="Node2D"]
+script = ExtResource("1_wobpj")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(583.25, 636)
+shape = SubResource("RectangleShape2D_4sb68")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+physics_interpolation_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(564, 335)
+texture = SubResource("GradientTexture2D_1t1tn")
+
+[node name="Spr_Player_Movement" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_mf5m5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(564, 335)
+shape = SubResource("RectangleShape2D_gsmy5")
