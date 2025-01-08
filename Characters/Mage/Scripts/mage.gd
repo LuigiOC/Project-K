@@ -3,19 +3,13 @@ extends Node2D
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _process(_delta: float) -> void:
-		#Adiciona a gravidade do mundo
+	#Adiciona a gravidade do mundo
 	$CharacterBody2D.velocity.y += gravity * 2 * _delta
-	
-	#Método de characterbody para mover e colidir
+		#Método de characterbody para mover e colidir
 	$CharacterBody2D.move_and_slide()
+	
 	#Função de capturar inputs e adicionar +1 -1 ao vetor de movimento
 	_Movement_Player(_delta)
-
-
-
-
-
-
 
 
 	#Função de capturar inputs e movimento do jogador
